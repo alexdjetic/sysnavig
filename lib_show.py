@@ -79,10 +79,6 @@ def draw_process_info(processes, start_index=0, max_display=10):
     print("-" * terminal_width)
     print(f"Showing processes {start_index+1}-{end_index} of {len(sorted_processes)}")
 
-    if end_index < len(sorted_processes):
-        print("Press 's' to scroll up to view more processes.")
-        print("Press 'd' to scroll down to view more processes.")
-    
     print("=" * terminal_width)
 
     return start_index + max_display if end_index < len(sorted_processes) else None
