@@ -35,9 +35,9 @@ def get_memory_info():
         'free': memory_info.free
     }
 
-def get_network_info():
+def get_network_info_v2():
     """
-    Get network information
+    Get network information, give number of bit since up
     """
     network_info = psutil.net_io_counters()
     received = network_info.bytes_recv
@@ -64,6 +64,28 @@ def get_network_info():
         max_data /= 1024
 
     return {"received": received, "sent": sent, "unit": unit}
+
+def get_network_info():
+    """
+    Get network information, give the actual number at instant t
+    """
+    global PREVIOUS_NETWORK_BYTES
+
+    network_info = {}
+    network_stats = psutil.net_io_counters()
+
+    # Calculate the difference in network bytes
+    if PREVIOUS_NETWORK_BYTES is not None:
+        network_info["received"] = network_stats.bytes_recv - PREVIOUS_NETWORK_BYTES[0]
+        network_info["sent"] = network_stats.bytes_sent - PREVIOUS_NETWORK_BYTES[1]
+    else:
+        network_info["received"] = 0
+        network_info["sent"] = 0
+
+    # Update the previous network bytes
+    PREVIOUS_NETWORK_BYTES = (network_stats.bytes_recv, network_stats.bytes_sent)
+
+    return network_info
 
 def get_process_list():
     """
