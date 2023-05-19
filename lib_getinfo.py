@@ -4,6 +4,7 @@ import math
 
 NETWORK_DATA = []
 NETWORK_DATA_DURATION = 60  # Duration in seconds
+PREVIOUS_NETWORK_BYTES = None
 
 def format_bytes(bytes):
     """
@@ -35,9 +36,9 @@ def get_memory_info():
         'free': memory_info.free
     }
 
-def get_network_info_v2():
+def get_network_info_v2(): #give number of bit since up
     """
-    Get network information, give number of bit since up
+    Get network information
     """
     network_info = psutil.net_io_counters()
     received = network_info.bytes_recv
@@ -67,7 +68,7 @@ def get_network_info_v2():
 
 def get_network_info():
     """
-    Get network information, give the actual number at instant t
+    Get network information
     """
     global PREVIOUS_NETWORK_BYTES
 
