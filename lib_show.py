@@ -39,14 +39,17 @@ def draw_interface(processes, start, max_disp, show_process=True, show_network=T
 
 def draw_process_info(processes, start_index=0, max_display=10):
     """
-    Draw process information with scrolling support
+    Draw process information with scrolling support, sorted by CPU power usage
     """
+    # Sort the processes by CPU percent in descending order
+    sorted_processes = sorted(processes, key=lambda p: p["cpu_percent"], reverse=True)
+
     end_index = start_index + max_display
 
     print("=" * 100)
     print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format("PID", "Name", "CPU", "Memory"))
     print("-" * 100)
-    for index, process in enumerate(processes[start_index:end_index], start=start_index):
+    for index, process in enumerate(sorted_processes[start_index:end_index], start=start_index):
         pid = str(process["pid"])
         name = process["name"]
         cpu = "{:.2f}%".format(process["cpu_percent"])
@@ -55,14 +58,15 @@ def draw_process_info(processes, start_index=0, max_display=10):
         print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format(pid, name, cpu, memory))
 
     print("-" * 100)
-    print(f"Showing processes {start_index+1}-{end_index} of {len(processes)}")
+    print(f"Showing processes {start_index+1}-{end_index} of {len(sorted_processes)}")
 
-    if end_index < len(processes):
+    if end_index < len(sorted_processes):
         print("Press 's' to scroll up to view more processes.")
         print("Press 'd' to scroll down to view more processes.")
     print("=" * 100)
 
-    return start_index + max_display if end_index < len(processes) else None
+    return start_index + max_display if end_index < len(sorted_processes) else None
+
 
 def draw_network_info(network_info):
     """
