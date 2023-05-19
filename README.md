@@ -11,22 +11,22 @@ this is a alternative to the command `htop`
 
 ### debian/debian fork
 - install python3: `apt install python python-pip git`
-- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
 ### alpine
 - install python3: `apk add python python-pip git`
-- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
 ### archlinux
 - install python3: `pacman -S python python-pip git`
-- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
 ### fedora
 - install python3: `dnf install python python-pip git`
-- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
 ## launching
@@ -43,4 +43,4 @@ sudo mv main.py sysnavig
 sudo chmod +x *.py
 ```
 
-✅ now you can launch without giving the path
+now you can launch without giving the path ✅
