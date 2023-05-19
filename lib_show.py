@@ -66,7 +66,7 @@ def draw_process_info(processes, start_index=0, max_display=10):
     end_index = start_index + max_display
 
     print("=" * terminal_width)
-    print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format("PID", "Name", "CPU", "Memory"))
+    print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<14s} |".format("PID", "Name", "CPU", "Memory"))
     print("-" * terminal_width)
     for index, process in enumerate(sorted_processes[start_index:end_index], start=start_index):
         pid = str(process["pid"])
@@ -74,7 +74,7 @@ def draw_process_info(processes, start_index=0, max_display=10):
         cpu = "{:.2f}%".format(process["cpu_percent"])
         memory = format_bytes(process["memory_info"].rss)
 
-        print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format(pid, name, cpu, memory))
+        print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<14s} |".format(pid, name, cpu, memory))
 
     print("-" * terminal_width)
     print(f"Showing processes {start_index+1}-{end_index} of {len(sorted_processes)}")
