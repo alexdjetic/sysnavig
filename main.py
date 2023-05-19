@@ -133,7 +133,7 @@ def main():
 
             # Get user input in a subprocess
             user_input = get_user_input(refresh_rate)
-            print(user_input)
+
             if user_input == "q":
                 print("\nExiting...")
                 sys.exit(0)
