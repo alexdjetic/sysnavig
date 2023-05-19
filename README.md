@@ -34,8 +34,10 @@ give the execution right to this utility: `chmod +x *.py` ✅
 ## shortcut
 create a shorcut, go to your directory using `cd ~/sysnavig`
 use these follow command:
-`sudo cp *.py /bin/
+```bash
+sudo cp *.py /bin/
 sudo mv main.py sysnavig
-sudo chmod +x *.py`
+sudo chmod +x *.py
+```
 
 ✅ now you can launch without giving the path
