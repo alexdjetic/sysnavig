@@ -9,7 +9,7 @@ this a projeck that i use in my personal server to only see current process, and
 
 ## install python3
 
-### debian/debian fork
+### → debian/debian fork
 - install python3: `apt install python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
