@@ -69,8 +69,9 @@ def draw_network_info(network_info):
     Draw network information
     """
     print("Network Information:")
+    print("-" * 38)
     print("| {0:<15s} | {1:<15s} |".format("Download", "Upload"))
-    print("-" * 34)
+    print("-" * 38)
     print("| {0:<15s} | {1:<15s} |".format(format_bytes(network_info["received"]), format_bytes(network_info["sent"])))
 
     print("=" * 80)
