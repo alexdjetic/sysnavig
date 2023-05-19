@@ -36,6 +36,22 @@ def draw_interface(processes, start, max_disp, show_process=True, show_network=T
     if show_network:
         network_info = get_network_info()
         draw_network_info(network_info)
+    
+    draw_general_info()
+
+def draw_general_info():
+    """
+    Draw process information with scrolling support, sorted by CPU power usage
+    """
+    cpu_percent= get_cpu_percent()
+    cpu_percent_generale = sum(cpu_percent) / len(cpu_percent)
+    memory_usage = get_memory_info()
+
+    print("=" *100)
+    print("-" * 100)
+    print("| {1:<10s} | {1:<20s} | {2:<20s} |".format("CPU Usage", "Memory Total", "memory Use"))
+    print("-" * 100)
+    print("| {1:<10s} | {1:<20s} | {2:<20s} |".format(format_bytes(cpu_percent_generale), format_bytes(memory_usage["total"]), format_bytes(memory_usage["used"])))
 
 def draw_process_info(processes, start_index=0, max_display=10):
     """
