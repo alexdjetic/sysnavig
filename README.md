@@ -61,4 +61,5 @@ i want to improve this command to add the feature:
 - manual page
 - log activity
 - use env_variable instead of local variable 
+- better UI for the utility, modularity
 
