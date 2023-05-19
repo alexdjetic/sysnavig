@@ -10,23 +10,24 @@ this is a alternative to the command `htop`
 ## install python3
 
 ### debian/debian fork
-install python3: `apt install python python-pip git`
-install the library: `pip install -r requirements.txt`
+- install python3: `apt install python python-pip git`
+- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- install the library: `pip install -r requirements.txt`
 
 ### alpine
-install python3: `apk add python python-pip git`
-clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
-install the library: `pip install -r requirements.txt`
+- install python3: `apk add python python-pip git`
+- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- install the library: `pip install -r requirements.txt`
 
 ### archlinux
-install python3: `pacman -S python python-pip git`
-clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
-install the library: `pip install -r requirements.txt`
+- install python3: `pacman -S python python-pip git`
+- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- install the library: `pip install -r requirements.txt`
 
 ### fedora
-install python3: `dnf install python python-pip git`
-clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
-install the library: `pip install -r requirements.txt`
+- install python3: `dnf install python python-pip git`
+- clone the reposetory: `git clone https://github.com/alexdjetic/sysnavig.git`
+- install the library: `pip install -r requirements.txt`
 
 ## launching
 give the execution right to this utility: `chmod +x *.py` ✅
