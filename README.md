@@ -51,8 +51,8 @@ here the key that this utility use by default:
 - d: scroll down process
 
 ## alias
-here how to create an alias:
-`alias /path/to/main.py`
+- here how to create an alias: `alias /path/to/main.py >> .zshrc`
+- there also .bashrc for bash, fishrc for fish, ...
 
 ## the next advancement
 i want to improve this command to add the feature:
