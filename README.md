@@ -10,7 +10,7 @@ this a projeck that i use in my personal server to only see current process, and
 ## install python3
 
 ### → debian/debian fork
-- install python3: `apt install python python-pip git`
+- install python3: `sudo apt install python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
@@ -20,12 +20,12 @@ this a projeck that i use in my personal server to only see current process, and
 - install the library: `pip install -r requirements.txt`
 
 ### → archlinux
-- install python3: `pacman -S python python-pip git`
+- install python3: `sudo pacman -S python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
 ### → fedora
-- install python3: `dnf install python python-pip git`
+- install python3: `sudo dnf install python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
