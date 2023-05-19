@@ -1,5 +1,6 @@
 #!/usr/bin/env python3
 
+import shutil
 import importlib
 import platform
 import time
@@ -101,6 +102,10 @@ def get_OS():
 #keyboard.on_press(handle_key_press)
 
 def main():
+
+    # get terminal size
+    terminal_width, terminal_height = shutil.get_terminal_size()
+
     # OS detection
     operating_system = get_OS()
 
@@ -111,12 +116,15 @@ def main():
     # Set the refresh rate (in seconds)
     refresh_rate = 4
     start_index = 0
-    max_display = 40
+    max_display = terminal_height - 15 #number of line that i use to print the other stuff
 
     # Run the main loop
     try:
         while True:
             print("The operating system is: {operating_system}")
+            
+            terminal_width, terminal_height = shutil.get_terminal_size()
+            max_display = terminal_height - 15 #number of line that i use to print the other stuff
 
             # Get the list of processes
             processes = get_process_list()
@@ -135,7 +143,7 @@ def main():
 
             # Get user input in a subprocess
             user_input = get_user_input(refresh_rate)
-
+            print(user_input)
             if user_input == "q":
                 print("\nExiting...")
                 sys.exit(0)
