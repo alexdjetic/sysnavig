@@ -17,17 +17,6 @@ from lib_show import draw_interface, update_network_data
 
 user_input = None
 
-def handle_key_press(event):
-    global user_input
-
-    key = event.name
-    if key == 'q':
-        user_input = 'q'
-    elif key == 's':
-        user_input = 's'
-    elif key == 'd':
-        user_input = 'd'
-
 def get_user_input(timeout=5):
     """
     Get user input with a timeout
@@ -44,6 +33,8 @@ def get_user_input(timeout=5):
         if rlist:
             # Read a single character
             char = sys.stdin.read(1)
+            if char == "\x1b":  # Arrow key
+                char = sys.stdin.read(2)  # Read the additional escape sequence
             return char
         else:
             return None
@@ -141,20 +132,19 @@ def main():
             # delay to get the keyboard input(daemon)
             time.sleep(0.01)
 
-            # Get user input in a subprocess
             user_input = get_user_input(refresh_rate)
-            print(user_input)
+            
             if user_input == "q":
                 print("\nExiting...")
                 sys.exit(0)
-            elif user_input == "s":
+            elif user_input == "[C": #richt arrow
                 start_index += max_display
                 if start_index >= len(processes):
                     start_index = 0
-            elif user_input == "d":
+            elif user_input == "D]": # left arrow
                 start_index -= max_display
                 if start_index <= 0:
-                    start_index = 0
+                    start_index = len(processes) - (len(processes) % max_display)
 
     except KeyboardInterrupt:
         print("\nExiting...")
