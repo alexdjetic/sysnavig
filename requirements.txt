@@ -1,0 +1,9 @@
+asciichartpy
+colorama
+importlib
+keyboard
+matplotlib
+numpy
+psutil
+watchgod
+
