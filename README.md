@@ -4,8 +4,8 @@
 this a projeck that i use in my personal server to only see current process.  
 
 ## description
-this is a alternative to the command `htop`
-⛔ only work on linux ⛔
+- this is a alternative to the command `htop`
+- ⛔ only work on linux ⛔
 
 ## install python3
 
