@@ -5,7 +5,7 @@ this a projeck that i use in my personal server to only see current process, and
 
 ## description
 - this is a alternative to the command `htop`
-- ⛔ only work on linux ⛔
+⛔ only work on linux ⛔
 
 ## install python3
 
