@@ -60,4 +60,5 @@ i want to improve this command to add the feature:
 - process manupilation: stop, create, interupt
 - manual page
 - log activity
+- use env_variable instead of local variable 
 
