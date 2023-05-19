@@ -141,7 +141,7 @@ def main():
                 start_index += max_display
                 if start_index >= len(processes):
                     start_index = 0
-            elif user_input == "D]": # left arrow
+            elif user_input == "[D": # left arrow
                 start_index -= max_display
                 if start_index <= 0:
                     start_index = len(processes) - (len(processes) % max_display)
