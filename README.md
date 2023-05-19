@@ -50,6 +50,10 @@ here the key that this utility use by default:
 - s: scroll up process
 - d: scroll down process
 
+## alias
+here how to create an alias:
+`alias /path/to/main.py`
+
 ## the next advancement
 i want to improve this command to add the feature:
 - network access: true graph
