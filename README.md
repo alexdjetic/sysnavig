@@ -29,7 +29,7 @@ this a projeck that i use in my personal server to only see current process, and
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
-## → launching
+## launching
 give the execution right to this utility: `chmod +x *.py` ✅
 
 ## shortcut
