@@ -1,7 +1,7 @@
 # sysnavig
 
 ## about me
-this a projeck that i use in my personal server to only see current process.  
+this a projeck that i use in my personal server to only see current process, and being use only for terminal  
 
 ## description
 - this is a alternative to the command `htop`
@@ -42,5 +42,12 @@ sudo cp *.py /bin/
 sudo mv main.py sysnavig
 sudo chmod +x *.py
 ```
-
 now you can launch without giving the path ✅
+
+## the next advancement
+i want to improve this command to add the feature:
+- network access: true graph
+- process manupilation: stop, create, interupt
+- manual page
+- log activity
+
