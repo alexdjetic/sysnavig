@@ -34,7 +34,9 @@ give the execution right to this utility: `chmod +x *.py` ✅
 ## shortcut
 create a shorcut, go to your directory using `cd ~/sysnavig`
 use these follow command:
-```bash
+```zsh
+#!/bin/sh
+
 sudo cp *.py /bin/
 sudo mv main.py sysnavig
 sudo chmod +x *.py
