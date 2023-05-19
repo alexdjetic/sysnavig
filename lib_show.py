@@ -1,3 +1,4 @@
+import shutil
 import sys
 import os
 import subprocess
@@ -11,7 +12,7 @@ import colorama
 from colorama import Fore, Style
 
 from lib_getinfo import (
-    get_cpu_percent, 
+    get_cpu_percent,
     get_memory_info, 
     get_network_info, 
     get_process_list,
@@ -43,28 +44,30 @@ def draw_general_info():
     """
     Draw process information with scrolling support, sorted by CPU power usage
     """
+    terminal_width, _ = shutil.get_terminal_size()
+
     cpu_percent= get_cpu_percent()
     cpu_percent_generale = sum(cpu_percent) / len(cpu_percent)
     memory_usage = get_memory_info()
 
-    print("=" *100)
-    print("-" * 100)
-    print("| {1:<10s} | {1:<20s} | {2:<20s} |".format("CPU Usage", "Memory Total", "memory Use"))
-    print("-" * 100)
-    print("| {1:<10s} | {1:<20s} | {2:<20s} |".format(format_bytes(cpu_percent_generale), format_bytes(memory_usage["total"]), format_bytes(memory_usage["used"])))
+    print("| {0:<10s} | {1:<20s} | {2:<20s} |".format("CPU Usage(%)", "Memory Total", "memory Use"))
+    print("-" *  terminal_width)
+    print("| {0:<12s} | {1:<20s} | {2:<20s} |".format("{:.2f}".format(cpu_percent_generale) + "%", format_bytes(memory_usage["total"]), format_bytes(memory_usage["used"])))
 
 def draw_process_info(processes, start_index=0, max_display=10):
     """
     Draw process information with scrolling support, sorted by CPU power usage
     """
+    #terminal size
+    terminal_width, terminal_height = shutil.get_terminal_size()
     # Sort the processes by CPU percent in descending order
     sorted_processes = sorted(processes, key=lambda p: p["cpu_percent"], reverse=True)
 
     end_index = start_index + max_display
 
-    print("=" * 100)
+    print("=" * terminal_width)
     print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format("PID", "Name", "CPU", "Memory"))
-    print("-" * 100)
+    print("-" * terminal_width)
     for index, process in enumerate(sorted_processes[start_index:end_index], start=start_index):
         pid = str(process["pid"])
         name = process["name"]
@@ -73,28 +76,31 @@ def draw_process_info(processes, start_index=0, max_display=10):
 
         print("| {0:<6s} | {1:<30s} | {2:<8s} | {3:<8s} |".format(pid, name, cpu, memory))
 
-    print("-" * 100)
+    print("-" * terminal_width)
     print(f"Showing processes {start_index+1}-{end_index} of {len(sorted_processes)}")
 
     if end_index < len(sorted_processes):
         print("Press 's' to scroll up to view more processes.")
         print("Press 'd' to scroll down to view more processes.")
-    print("=" * 100)
+    
+    print("=" * terminal_width)
 
     return start_index + max_display if end_index < len(sorted_processes) else None
-
 
 def draw_network_info(network_info):
     """
     Draw network information
     """
-    print("Network Information:")
-    print("-" * 38)
-    print("| {0:<15s} | {1:<15s} |".format("Download", "Upload"))
-    print("-" * 38)
-    print("| {0:<15s} | {1:<15s} |".format(format_bytes(network_info["received"]), format_bytes(network_info["sent"])))
+    terminal_width, _ = shutil.get_terminal_size()
+    download = format_bytes(network_info["received"])
+    upload = format_bytes(network_info["sent"])
 
-    print("=" * 80)
+    print("Network Information:")
+    print("-" * terminal_width)
+    print("| {0:<15s} | {1:<15s} |".format("Download", "Upload"))
+    print("| {0:<15s} | {1:<15s} |".format(download, upload))
+    print("-" * terminal_width)
+
     #draw_network_graph_CLI()
 
 def draw_network_graph_gui():
