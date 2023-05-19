@@ -47,8 +47,8 @@ now you can launch without giving the path ✅
 ## manual
 here the key that this utility use by default:
 - q: quit
-- s: scroll up process
-- d: scroll down process
+- right arrow: scroll up process
+- left arrow: scroll down process
 
 ## alias
 - here how to create an alias: `alias /path/to/main.py >> .zshrc`
