@@ -14,22 +14,22 @@ this a projeck that i use in my personal server to only see current process, and
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
-### alpine
+### → alpine
 - install python3: `apk add python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
-### archlinux
+### → archlinux
 - install python3: `pacman -S python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
-### fedora
+### → fedora
 - install python3: `dnf install python python-pip git`
 - clone the repository: `git clone https://github.com/alexdjetic/sysnavig.git`
 - install the library: `pip install -r requirements.txt`
 
-## launching
+## → launching
 give the execution right to this utility: `chmod +x *.py` ✅
 
 ## shortcut
