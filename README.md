@@ -44,6 +44,12 @@ sudo chmod +x *.py
 ```
 now you can launch without giving the path ✅
 
+## manual
+here the key that this utility use by default:
+- q: quit
+- s: scroll up process
+- d: scroll down process
+
 ## the next advancement
 i want to improve this command to add the feature:
 - network access: true graph
