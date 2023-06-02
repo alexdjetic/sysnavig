@@ -13,7 +13,7 @@ import threading
 import keyboard
 
 from lib_getinfo import get_cpu_percent, get_memory_info, get_network_info, get_process_list, NETWORK_DATA
-from lib_show import draw_interface, update_network_data
+from lib_show import draw_interface
 
 user_input = None
 
