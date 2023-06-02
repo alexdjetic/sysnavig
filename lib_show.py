@@ -39,7 +39,33 @@ def draw_interface(processes, start, max_disp, show_process=True, show_network=T
         draw_network_info(network_info)
 
     draw_general_info()
+def draw_network_info(network_info):
+    """
+    Draw network information
+    """
+    terminal_width, _ = shutil.get_terminal_size()
+    download = format_bytes(network_info["received"])
+    upload = format_bytes(network_info["sent"])
 
+    print("Network Information:")
+    print("-" * terminal_width)
+    print("| {0:<15s} | {1:<15s} |".format("Download", "Upload"))
+    print("| {0:<15s} | {1:<15s} |".format(download, upload))
+    print("-" * terminal_width)
+
+    #draw_network_graph_CLI()
+
+def update_network_data():
+    """
+    Update the network data
+    """
+    network_info = get_network_info()
+    current_time = time.time()
+    received = network_info["received"]
+    sent = network_info["sent"]
+
+    NETWORK_DATA.append((current_time, received, sent))
+    
 def draw_general_info():
     """
     Draw process information with scrolling support, sorted by CPU power usage
